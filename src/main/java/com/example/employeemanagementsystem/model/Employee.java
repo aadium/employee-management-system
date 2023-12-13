@@ -60,12 +60,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "{" +
-                " ID='" + getId() + "'" +
-                ", Name='" + getName() + "'" +
-                ", Designation='" + getDesignation() + "'" +
-                ", Salary='" + getSalary() + "'" +
-                "}";
+        return "{ ID: " + getId() +
+                ", Name: '" + getName() + "'" +
+                ", Designation: '" + getDesignation() + "'" +
+                ", Salary: " + getSalary() + " }";
     }
 
 }

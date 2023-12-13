@@ -15,18 +15,20 @@ public class EmployeeRESTController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/employees")
+    @GetMapping("/")
     public ModelAndView getAllEmployees() {
         List<Employee> employees = employeeService.getAllEmployees();
-        System.out.println("Number of employees: " + employees.size());
         ModelAndView modelAndView = new ModelAndView("employees");
         modelAndView.addObject("employees", employees);
         return modelAndView;
     }
 
     @GetMapping("/{id}")
-    public Employee getEmployeeById(@PathVariable Long id) {
-        return employeeService.getEmployeeById(id);
+    public ModelAndView getEmployeeById(@PathVariable Long id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        ModelAndView modelAndView = new ModelAndView("employeeById");
+        modelAndView.addObject("employeeById", employee);
+        return modelAndView;
     }
 
     @PostMapping
