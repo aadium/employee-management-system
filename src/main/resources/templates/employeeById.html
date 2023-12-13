@@ -15,8 +15,12 @@
             <td th:text="${employeeById.id}"></td>
         </tr>
         <tr>
-            <th>Name</th>
+            <th>First Name</th>
             <td th:text="${employeeById.name}"></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td th:text="${employeeById.surname}"></td>
         </tr>
         <tr>
             <th>Designation</th>
@@ -25,6 +29,18 @@
         <tr>
             <th>Salary</th>
             <td th:text="${employeeById.salary}"></td>
+        </tr>
+        <tr>
+            <th>Date of Birth</th>
+            <td th:text="${employeeById.dob}"></td>
+        </tr>
+        <tr>
+            <th>E-mail I.D.</th>
+            <td th:text="${employeeById.email}"></td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td th:text="${employeeById.extension + ' ' + employeeById.phone}"></td>
         </tr>
     </table>
 </body>

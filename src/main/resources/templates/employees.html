@@ -13,15 +13,13 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Designation</th>
-                <th>Salary</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="employee : ${employees}">
                 <td th:text="${employee.id}"></td>
-                <td th:text="${employee.name}"></td>
+                <td><a th:href="@{/{id}(id=${employee.id})}" th:text="${employee.name}"></a></td>
                 <td th:text="${employee.designation}"></td>
-                <td th:text="${employee.salary}"></td>
             </tr>
         </tbody>
     </table>
