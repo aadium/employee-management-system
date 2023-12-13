@@ -14,7 +14,7 @@ This is a Java-based web application built using the Spring Boot framework and T
 <h2>Getting Started</h2>
 To run the application locally, follow these steps:
 <li>Clone the repository: git clone https://github.com/aadium/employee-management-system.git
-<li>Configure the application.properties file with your MySQL database settings.
+<li>Create and configure the application.properties file with your MySQL database settings. The file should be created in the src/main/resources directory. Refer to the application_demo.properties file for the template.
 <li>Run the application using Maven: ./mvnw spring-boot:run
 <li>Access the application at http://localhost:8080 in your web browser.
 <h2>Contributions</h2>
