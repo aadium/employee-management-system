@@ -21,7 +21,7 @@
 <body class="p-3 mb-2 bg-dark text-white">
     <div class="container mt-5">
         <h1 class="text-light">Add Employee</h1>
-        <form th:action="@{/saveEmployee}" th:object="${employee}" method="post" class="bg-dark">
+        <form th:action="@{/addEmployee/saveEmployee}" th:object="${employee}" method="post" class="bg-dark">
             <div class="mb-3">
                 <label for="name" class="form-label text-light">First Name:</label>
                 <input type="text" id="name" name="name" th:field="*{name}" class="form-control bg-dark text-light" required>
@@ -67,7 +67,8 @@
                 <input type="text" id="extension" name="extension" th:field="*{extension}" class="form-control bg-dark text-light" required>
             </div>
     
-            <button type="submit" class="btn btn-outline-light">Add Employee</button>
+            <button type="submit" class="btn btn-success">Add Employee</button>
+            <button type="reset" class="btn btn-secondary">Reset Values</button>
         </form>
     </div>
 </body>

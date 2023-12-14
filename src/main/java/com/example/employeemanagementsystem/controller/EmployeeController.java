@@ -3,14 +3,15 @@ package com.example.employeemanagementsystem.controller;
 import com.example.employeemanagementsystem.model.Employee;
 import com.example.employeemanagementsystem.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/")
-public class EmployeeRESTController {
+public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
@@ -38,21 +39,22 @@ public class EmployeeRESTController {
         return modelAndView;
     }
 
-    @PostMapping("/saveEmployee")
+    @PostMapping("/addEmployee/saveEmployee")
     public String saveEmployee(@ModelAttribute Employee employee) {
         Employee savedEmployee = employeeService.saveEmployee(employee);
-        return "redirect:/addEmployee/success/" + savedEmployee.getId();
+        return "redirect:/addEmployee/saveEmployee/success/" + savedEmployee.getId();
     }
 
-    @GetMapping("/addEmployee/success/{employeeId}")
+    @GetMapping("/addEmployee/saveEmployee/success/{employeeId}")
     public ModelAndView showSuccessPage(@PathVariable Long employeeId) {
         ModelAndView modelAndView = new ModelAndView("success");
         modelAndView.addObject("employeeId", employeeId);
         return modelAndView;
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Long id) {
+    @DeleteMapping("/deleteEmployee/{id}")
+    public String deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
+        return "redirect:/";
     }
 }

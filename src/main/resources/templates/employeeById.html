@@ -33,8 +33,8 @@
                 <td th:text="${employeeById.salary}"></td>
             </tr>
             <tr>
-                <th>Date of Birth (YYYY-MM-DD)</th>
-                <td th:text="${employeeById.dob}"></td>
+                <th>Date of Birth</th>
+                <td th:text="${#dates.format(employeeById.dob, 'dd MMMM yyyy')}"></td>
             </tr>
             <tr>
                 <th>E-mail I.D.</th>
@@ -45,6 +45,7 @@
                 <td th:text="${employeeById.extension + ' ' + employeeById.phone}"></td>
             </tr>
         </table>
+        <a th:href="@{/deleteEmployee/{id}(id=${employeeById.id})}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee?')">Delete</a>
     </div>
 </body>
 </html>
