@@ -17,7 +17,7 @@
                     <th>Designation</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider">
                 <tr th:each="employee : ${employees}">
                     <td th:text="${employee.id}"></td>
                     <td><a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" th:href="@{/{id}(id=${employee.id})}" th:text="${employee.name} + ' ' + ${employee.surname}"></a></td>
@@ -25,6 +25,7 @@
                 </tr>
             </tbody>
         </table>
+        <a href="/addEmployee"><button class="btn btn-outline-light">Add an Employee</button></a>
     </div>
 </body>
 </html>

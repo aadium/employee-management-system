@@ -31,9 +31,24 @@ public class EmployeeRESTController {
         return modelAndView;
     }
 
-    @PostMapping
-    public Employee saveEmployee(@RequestBody Employee employee) {
-        return employeeService.saveEmployee(employee);
+    @GetMapping("/addEmployee")
+    public ModelAndView showAddEmployeeForm() {
+        ModelAndView modelAndView = new ModelAndView("addEmployee");
+        modelAndView.addObject("employee", new Employee());
+        return modelAndView;
+    }
+
+    @PostMapping("/saveEmployee")
+    public String saveEmployee(@ModelAttribute Employee employee) {
+        Employee savedEmployee = employeeService.saveEmployee(employee);
+        return "redirect:/addEmployee/success/" + savedEmployee.getId();
+    }
+
+    @GetMapping("/addEmployee/success/{employeeId}")
+    public ModelAndView showSuccessPage(@PathVariable Long employeeId) {
+        ModelAndView modelAndView = new ModelAndView("success");
+        modelAndView.addObject("employeeId", employeeId);
+        return modelAndView;
     }
 
     @DeleteMapping("/{id}")

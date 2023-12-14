@@ -9,7 +9,7 @@
 <body class="p-3 mb-2 bg-dark text-white">
     <div class="container">
         <h1>Employee Details</h1>
-        <table class="table table-dark table-striped">
+        <table class="table table-dark table-bordered table-striped">
             <thead>
             </thead>
             <tr>
@@ -33,7 +33,7 @@
                 <td th:text="${employeeById.salary}"></td>
             </tr>
             <tr>
-                <th>Date of Birth</th>
+                <th>Date of Birth (YYYY-MM-DD)</th>
                 <td th:text="${employeeById.dob}"></td>
             </tr>
             <tr>
