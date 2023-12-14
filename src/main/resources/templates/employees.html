@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Employee List</title>
 </head>
-<body>
-    <h1>Employee List</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Designation</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="employee : ${employees}">
-                <td th:text="${employee.id}"></td>
-                <td><a th:href="@{/{id}(id=${employee.id})}" th:text="${employee.name}"></a></td>
-                <td th:text="${employee.designation}"></td>
-            </tr>
-        </tbody>
-    </table>
+<body class="p-3 mb-2 bg-dark text-white">
+    <div class="container">
+        <h1>Employee List</h1>
+        <table class="table table-dark table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee : ${employees}">
+                    <td th:text="${employee.id}"></td>
+                    <td><a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" th:href="@{/{id}(id=${employee.id})}" th:text="${employee.name} + ' ' + ${employee.surname}"></a></td>
+                    <td th:text="${employee.designation}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

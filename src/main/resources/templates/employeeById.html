@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Employee Details</title>
 </head>
-<body>
-    <h1>Employee Details</h1>
-    <table border="1">
-        <thead>
-        </thead>
-        <tr>
-            <th>ID</th>
-            <td th:text="${employeeById.id}"></td>
-        </tr>
-        <tr>
-            <th>First Name</th>
-            <td th:text="${employeeById.name}"></td>
-        </tr>
-        <tr>
-            <th>Last Name</th>
-            <td th:text="${employeeById.surname}"></td>
-        </tr>
-        <tr>
-            <th>Designation</th>
-            <td th:text="${employeeById.designation}"></td>
-        </tr>
-        <tr>
-            <th>Salary</th>
-            <td th:text="${employeeById.salary}"></td>
-        </tr>
-        <tr>
-            <th>Date of Birth</th>
-            <td th:text="${employeeById.dob}"></td>
-        </tr>
-        <tr>
-            <th>E-mail I.D.</th>
-            <td th:text="${employeeById.email}"></td>
-        </tr>
-        <tr>
-            <th>Phone Number</th>
-            <td th:text="${employeeById.extension + ' ' + employeeById.phone}"></td>
-        </tr>
-    </table>
+<body class="p-3 mb-2 bg-dark text-white">
+    <div class="container">
+        <h1>Employee Details</h1>
+        <table class="table table-dark table-striped">
+            <thead>
+            </thead>
+            <tr>
+                <th>ID</th>
+                <td th:text="${employeeById.id}"></td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td th:text="${employeeById.name}"></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td th:text="${employeeById.surname}"></td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td th:text="${employeeById.designation}"></td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td th:text="${employeeById.salary}"></td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td th:text="${employeeById.dob}"></td>
+            </tr>
+            <tr>
+                <th>E-mail I.D.</th>
+                <td th:text="${employeeById.email}"></td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td th:text="${employeeById.extension + ' ' + employeeById.phone}"></td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
