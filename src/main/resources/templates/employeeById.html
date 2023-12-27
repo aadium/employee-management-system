@@ -45,7 +45,10 @@
                 <td th:text="${employeeById.extension + ' ' + employeeById.phone}"></td>
             </tr>
         </table>
-        <a th:href="@{/deleteEmployee/{id}(id=${employeeById.id})}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee?')">Delete</a>
+        <form th:action="@{/deleteEmployee/{id}(id=${employeeById.id})}" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee?')" />
+        </form>
     </div>
 </body>
 </html>
